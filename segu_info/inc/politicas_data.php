@@ -1,0 +1,43 @@
+<?php
+// Políticas de seguridad. 'ambito' = 'clientes' o 'personal'.
+// Cada política tiene 'puntos' (lista) o 'texto' (párrafo).
+
+$intro_clientes = 'Las siguientes políticas están dirigidas a todos los clientes y visitantes que interactúan con la heladería, ya sea de forma presencial en el local o a través de nuestros canales digitales (página web, aplicación móvil, servicio de delivery y red Wi-Fi gratuita). Este conjunto de normas tiene un doble propósito: por un lado, garantizar al consumidor la transparencia, el resguardo de sus datos personales y la seguridad en sus transacciones económicas; y por otro, establecer las condiciones de uso responsable de los servicios tecnológicos que la empresa pone a su disposición. Al utilizar nuestras plataformas o servicios, el cliente acepta y se compromete a respetar los términos aquí descritos.';
+
+$intro_personal = 'Las presentes políticas de seguridad establecen los lineamientos, controles y responsabilidades obligatorias para todo el personal de la heladería (cajeros, despachantes, repartidores, encargados y personal administrativo) que tenga acceso a los sistemas informáticos, terminales de cobro, redes e instalaciones físicas del negocio. Su objetivo principal es proteger la integridad, confidencialidad y disponibilidad de los activos de la empresa, prevenir fraudes o errores operativos y asegurar la continuidad del servicio frente a cualquier contingencia. El cumplimiento de estas normativas es de carácter estrictamente obligatorio durante la jornada laboral y su inobservancia estará sujeta a las sanciones disciplinarias correspondientes.';
+
+$politicas = [
+  // ---------- Para clientes ----------
+  'privacidad' => ['ambito' => 'clientes', 'icono' => '🔒', 'titulo' => 'Privacidad y protección de datos personales', 'resumen' => 'Cómo cuidamos tus datos personales.',
+    'texto' => 'La heladería se compromete a proteger la confidencialidad de los datos personales suministrados por los clientes (nombre, teléfono, dirección de entrega y correo electrónico) al realizar pedidos a domicilio o registrarse en el club de beneficios. Dicha información será utilizada exclusivamente para procesar entregas, emitir comprobantes y enviar promociones previamente autorizadas por el usuario, garantizando que nunca será vendida ni cedida a terceros.'],
+  'pagos_online' => ['ambito' => 'clientes', 'icono' => '💳', 'titulo' => 'Seguridad en pagos electrónicos', 'resumen' => 'Pasarelas certificadas y cifrado seguro.',
+    'texto' => 'Todas las transacciones realizadas a través de nuestra tienda online, aplicación móvil o terminales de pago en el local se procesan mediante pasarelas de pago certificadas y bajo protocolos de cifrado seguro (SSL/TLS). La heladería no almacena ni tiene acceso a los números completos ni a los códigos de seguridad (CVV) de las tarjetas de crédito o débito utilizadas por los clientes.'],
+  'wifi' => ['ambito' => 'clientes', 'icono' => '📶', 'titulo' => 'Uso aceptable del Wi-Fi para clientes', 'resumen' => 'Condiciones del Wi-Fi gratuito del salón.',
+    'texto' => 'El servicio de conexión Wi-Fi gratuito brindado en el salón es para uso exclusivo de los consumidores durante su estadía en el local. Al conectarse a la red, el cliente acepta no utilizarla para realizar actividades ilícitas, descargar contenido protegido por derechos de autor, enviar correo no deseado (spam) ni intentar vulnerar la seguridad de otros dispositivos conectados o de los sistemas internos de la empresa.'],
+  'cuenta' => ['ambito' => 'clientes', 'icono' => '👤', 'titulo' => 'Seguridad de cuenta en la app / web de pedidos', 'resumen' => 'Tu contraseña y las compras de tu perfil.',
+    'texto' => 'Los clientes que creen una cuenta en nuestra plataforma digital para acumular puntos o agilizar sus pedidos son responsables de mantener la confidencialidad de su contraseña y de todas las compras realizadas desde su perfil. La heladería recomienda utilizar claves seguras y notificar de inmediato a nuestro canal de atención al cliente ante cualquier sospecha de acceso no autorizado a su cuenta.'],
+  'delivery' => ['ambito' => 'clientes', 'icono' => '🛵', 'titulo' => 'Verificación y entrega segura (delivery)', 'resumen' => 'Cómo evitamos fraudes en las entregas.',
+    'texto' => 'Con el objetivo de evitar fraudes y garantizar que el pedido llegue al destinatario correcto, el cliente deberá proporcionar una dirección válida y un teléfono de contacto activo al momento de la compra. En pedidos abonados previamente de forma digital que superen un monto determinado, el repartidor podrá solicitar la exhibición del documento de identidad o un código de confirmación enviado al teléfono del comprador antes de entregar el producto.'],
+
+  // ---------- Para el personal (uso interno) ----------
+  'acceso' => ['ambito' => 'personal', 'icono' => '🔑', 'titulo' => 'Autenticación y control de acceso', 'resumen' => 'Usuarios, contraseñas y permisos por cargo.',
+    'texto' => 'Todo el personal de la heladería que opere los sistemas de punto de venta (POS), gestión de stock o plataformas de delivery deberá contar con un usuario y contraseña propios e intransferibles. Los permisos se asignarán bajo el principio de mínimo privilegio según el cargo: los cajeros solo podrán registrar ventas y cobros, mientras que la anulación de tickets, modificación de precios y acceso a reportes financieros quedarán restringidos exclusivamente a la gerencia. Queda prohibido compartir credenciales entre turnos o dejar sesiones abiertas sin supervisión.'],
+  'backup' => ['ambito' => 'personal', 'icono' => '💾', 'titulo' => 'Copias de seguridad y continuidad del negocio', 'resumen' => 'Backups diarios y plan ante caídas del sistema.',
+    'texto' => 'Para garantizar la operatividad ante cortes de luz, fallos de hardware o pérdida de datos, la administración ejecutará copias de seguridad (backups) automáticas y diarias de las bases de datos de ventas, facturación e inventario en un entorno en la nube cifrado. Asimismo, el local mantendrá un protocolo de contingencia manual mediante talonarios físicos y una conexión de internet móvil de respaldo para continuar operando ante caídas del sistema principal.'],
+  'red' => ['ambito' => 'personal', 'icono' => '📶', 'titulo' => 'Segmentación de red y uso de Wi-Fi interno', 'resumen' => 'Red operativa separada de la de los clientes.',
+    'texto' => 'La red inalámbrica utilizada por las terminales de caja, posnets, impresoras de comandas y cámaras de seguridad deberá estar estrictamente separada y aislada de la red Wi-Fi gratuita ofrecida a los clientes. Queda prohibido que el personal conecte sus teléfonos móviles personales a la red operativa del local o utilice los equipos de caja para navegar por internet, descargar archivos o revisar correos personales.'],
+  'fisica' => ['ambito' => 'personal', 'icono' => '📹', 'titulo' => 'Seguridad física y videovigilancia', 'resumen' => 'Accesos restringidos y cámaras de seguridad.',
+    'texto' => 'El acceso a la oficina administrativa, al servidor o computadora principal y a la caja fuerte estará restringido únicamente al personal autorizado. El local contará con un sistema de cámaras de seguridad en puntos críticos (cajas registradoras, accesos y depósitos) cuyas grabaciones se almacenarán de forma protegida durante un mínimo de 30 días, quedando prohibido manipular, desconectar o divulgar dichas imágenes sin autorización judicial o de la gerencia.'],
+  'efectivo' => ['ambito' => 'personal', 'icono' => '💵', 'titulo' => 'Gestión de pagos y manejo de efectivo', 'resumen' => 'Datos de tarjetas y control del efectivo en caja.',
+    'texto' => 'El personal tiene estrictamente prohibido anotar, fotografiar o almacenar datos de tarjetas de crédito o débito de los clientes fuera de las terminales de pago homologadas. Asimismo, todo cobro en efectivo deberá registrarse de inmediato en el sistema POS y depositarse en la caja registradora, realizando retiros parciales hacia la caja fuerte cada vez que se supere el límite de efectivo establecido por la administración para minimizar riesgos ante robos.'],
+];
+
+// Dibuja una tarjeta de política
+function tarjeta_politica($clave, $p) { ?>
+  <a class="card link" href="politica.php?tema=<?= h($clave) ?>">
+    <span class="ic" aria-hidden="true"><?= $p['icono'] ?></span>
+    <h3><?= h($p['titulo']) ?></h3>
+    <p class="muted"><?= h($p['resumen']) ?></p>
+    <span class="more">Ver política</span>
+  </a>
+<?php }
